@@ -603,6 +603,17 @@ export const cryptoData = {
   },
 };
 
-export const cryptoAssets = {
-    
-}
+export const cryptoAssets = [
+  {
+    id: "bitcoin",
+    amount: 0.01,
+    price: 13122,
+    date: new Date(),
+  },
+  {
+    id: "etherium",
+    amount: 5,
+    price: 2400,
+    date: new Date(),
+  },
+];
