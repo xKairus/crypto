@@ -1,6 +1,8 @@
 import { Layout } from "antd";
 import Typography from "antd/es/typography/Typography";
 import { useCrypto } from "../../context/crypto-context";
+import PortfolioChart from "../PortfolioChart";
+import AssetsTable from "../AssetsTable";
 
 const contentStyle = {
   textAlign: "center",
@@ -28,6 +30,8 @@ export default function AppContent() {
           .toFixed(2)}
         $
       </Typography.Title>
+      <PortfolioChart />
+      <AssetsTable />
     </Layout.Content>
   );
 }
