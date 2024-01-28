@@ -27,7 +27,7 @@ export default function AddAssetForm({ onClose }) {
   const [coin, setCoin] = useState(null);
   const [submitted, setSubmitted] = useState(false);
   const [form] = Form.useForm();
-  const { crypto } = useCrypto();
+  const { crypto, addAsset } = useCrypto();
   const assetRef = useRef();
 
   if (submitted) {
@@ -81,6 +81,7 @@ export default function AddAssetForm({ onClose }) {
     };
     assetRef.current = newAsset;
     setSubmitted(true);
+    addAsset(newAsset);
   }
 
   function handleAmountChange(value) {
