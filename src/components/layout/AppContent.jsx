@@ -1,24 +1,24 @@
-import { Layout } from "antd";
-import Typography from "antd/es/typography/Typography";
-import { useCrypto } from "../../context/crypto-context";
-import PortfolioChart from "../PortfolioChart";
-import AssetsTable from "../AssetsTable";
+import { Layout } from "antd"
+import Typography from "antd/es/typography/Typography"
+import { useCrypto } from "../../context/crypto-context"
+import PortfolioChart from "../PortfolioChart"
+import AssetsTable from "../AssetsTable"
 
 const contentStyle = {
   textAlign: "center",
-  minHeight: "calc(100vh-60px)",
+  minHeight: "calc(100vh - 60px)",
   color: "#fff",
   backgroundColor: "#001529",
   padding: "1rem",
-};
+}
 
 export default function AppContent() {
-  const { assets, crypto } = useCrypto();
+  const { assets, crypto } = useCrypto()
 
   const cryptoPriceMap = crypto.reduce((acc, coin) => {
-    acc[coin.id] = coin.price;
-    return acc;
-  }, {});
+    acc[coin.id] = coin.price
+    return acc
+  }, {})
 
   return (
     <Layout.Content style={contentStyle}>
@@ -33,5 +33,5 @@ export default function AppContent() {
       <PortfolioChart />
       <AssetsTable />
     </Layout.Content>
-  );
+  )
 }
